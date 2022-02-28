@@ -1,0 +1,99 @@
+.section-area-new-note{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 25%;
+    bottom: 25%;
+    left: 25%;
+    right: 25%;
+}
+
+.form-new-note {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.form-new-note input{
+    font-family: 'Exo';
+    font-size: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    width: 480px;
+    height: 50px;
+    border: 1px solid #fff;
+    border-radius: 7px;
+    outline: 0;
+}
+
+.form-new-note textarea {
+    font-family: 'Exo';
+    font-size: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    width: 480px;
+    height: 400px;
+    resize: none;
+    border: 1px solid #fff;
+    border-radius: 7px;
+    outline: 0;
+}
+
+.buttons-bar {
+    width: 480px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.buttons-bar a {
+    font-size: 13.3333px;
+    text-decoration: none;
+    color: #222;
+}
+
+.button-action-note {
+    cursor: pointer;
+    padding: 10px 25px;
+    font-family: 'Exo';
+    border: none;
+    border-radius: 7px;
+    background-color: #fff;
+}
+
+.button-action-note:hover {
+    background-color:#00BFFF;
+    color: #fff;
+}
+
+.warning-form {
+    display: none;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    margin: 10px 0 15px 0;
+    padding-left: 10px;
+    font-family: 'Exo';
+    color: #fff;
+    background-color: red;
+    border-radius: 7px;
+}
+
+@media (max-width: 520px) {
+    .form-new-note input, .form-new-note textarea, .buttons-bar, .warning-form {
+        width: 95vw;
+    }
+
+    .form-note-area {
+        margin-top: 80px;
+    }
+
+    .button-action-note {
+        display: flex;
+        justify-content: center;
+        width: 20vw;
+    }
+}

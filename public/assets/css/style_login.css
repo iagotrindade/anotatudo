@@ -1,0 +1,64 @@
+.form-area {
+    position: fixed;
+    top: 25%;
+    bottom: 25%;
+    left: 25%;
+    right: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-login input {
+    height: 40px;
+    width: 280px;
+    margin-bottom: 20px;
+    border: 1px solid #fff;
+    border-radius: 7px;
+    outline: 0;
+    font-family: 'Exo';
+    padding-left: 10px;
+}
+
+.button {
+    cursor: pointer;
+    padding: 7px 10px;
+    font-family: 'Exo';
+    border: none;
+    border-radius: 7px;
+    background-color: #fff;
+}
+
+.button:hover {
+    background-color:#00BFFF;
+    color: #fff;
+}
+
+.link-form-login {
+    width: 290px;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+
+.link-form-login:hover {
+    text-decoration: underline;
+}
+
+.flash {
+    width: 280px;
+    border: 1px solid red;
+    background-color: red;
+    color: #fff;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 7px;
+}
