@@ -19,7 +19,6 @@ class LoginHandler {
                 return $loggedUser;
             }
         }
-        
         return false;
     }
 
@@ -27,7 +26,7 @@ class LoginHandler {
         $user = User::select()->where('email', $email)->one();
 
         if ($user) {
-            if(password_verify($passsword, $user['password'])) {
+            if(password_verify($password, $user['password'])) {
                 $token= md5(time().rand(0, 9999 ).time());
                 User::update()
                     ->set('token', $token)
@@ -45,7 +44,7 @@ class LoginHandler {
     }
 
     public static function addUser($name, $email, $password, $birthday) {
-        $hash = password_hash($passsword, PASSWORD_DEFAULT);
+        $hash = password_hash($password, PASSWORD_DEFAULT);
         $token = md5(time().rand(0, 9999 ).time()); 
         User::insert([
             'name' => $name,

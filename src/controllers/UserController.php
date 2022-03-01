@@ -15,16 +15,8 @@ class UserController extends Controller {
     }
 
     public function getUser() {
-        $userBirthday = $this->loggedUser->birthday;
-
-        $userBirthday = explode('-', $this->loggedUser->birthday);
-        $userBirthday = $userBirthday[2] . $userBirthday[1] . $userBirthday[0];
-
-        $this->loggedUser->birthday = $userBirthday;
-
         $this->render('/edituser', [
-            'loggedUser' => $this->loggedUser,
-            'userBirthday' => $userBirthday
+            'loggedUser' => $this->loggedUser
         ]); 
     }
 
@@ -47,17 +39,13 @@ class UserController extends Controller {
             $this->redirect('/edit_user');
         }
 
-        $verify = UserHandler::updateUser($this->loggedUser->id, $newName, $newEmail, $newBirthday, $pass);
-
-        if ($verify === true) {
+        if (UserHandler::updateUser($this->loggedUser->id, $newName, $newEmail, $newBirthday, $pass)) {
             $this->redirect('/');
         }
 
         else {
+            $_SESSION['flash'] = 'A senha esta incorreta';
             $this->redirect('/edit_user');
         }
-        
-        
-            
     }
 }

@@ -26,7 +26,7 @@
             <nav class="action-bar">
                 <div class="user-area">
                     <p>
-                        Bem-Vindo <a href="<?=$base?>/edit_user"><?=$loggedUser->name;?></a> / <a href="logout">Sair</a>
+                        Bem-Vindo <a href="<?=$base?>/edit_user"><?=$loggedUser->name;?></a> / <a href="<?=$base?>/logout">Sair</a>
                     </p>
                 </div>
                 <div class="filter">

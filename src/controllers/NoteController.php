@@ -23,7 +23,6 @@ class NoteController extends Controller {
     }
 
     public function addNote() {
-        $user = new HomeController();
         $noteTittle = filter_input(INPUT_POST, 'tittle');
         $noteBody = filter_input(INPUT_POST, 'body');
 

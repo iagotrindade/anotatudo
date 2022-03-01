@@ -69,11 +69,6 @@ class LoginController extends Controller {
                 $this->redirect('/cadastro');
             }
 
-            elseif (filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL) == false) {
-                $_SESSION['flash'] = 'E-nmail invalido';
-                $this->redirect('/cadastro');
-            }
-
             if(LoginHandler::emailExists($email) === false) {
                 $token = LoginHandler::addUser($name, $email, $password, $birthday);
                 $_SESSION['token'] = $token;
@@ -90,5 +85,10 @@ class LoginController extends Controller {
         else {
             $this->redirect('/cadastro');
         }
+    }
+
+    public function logout() {
+        $_SESSION['token'] = '';
+        $this->redirect('/login');
     }
 }
